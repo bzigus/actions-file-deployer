@@ -351,7 +351,7 @@ runs:
             ${{inputs.ftp-post-sync-commands}}"
         else
           ${proxy_cmd} lftp -c "put -O \ .deploy-running
-            mput -d -O $(awk 'ORS=" " { print "\"" $0 "\"" }' ~/files_to_upload)
+            mput -d -O ~/files_to_upload)
             rm -f \".deploy-check\" $(awk -v REMOTEPATH=\"${remote_path_slash}\" 'ORS=" " { print "\"" REMOTEPATH $0 "\"" }' ~/files_to_delete)
             rm -f \"$.deploy-running\"
             ${{inputs.ftp-post-sync-commands}}"
