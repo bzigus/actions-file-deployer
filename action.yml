@@ -128,7 +128,7 @@ runs:
 
         echo "Initialize inputs"
 
-        remote_path_unslash=$(realpath --canonicalize-missing '${{inputs.remote-path}}')
+        remote_path_unslash=$('${{inputs.remote-path}}')
         remote_path_slash="${remote_path_unslash}/"
 
         input_remote_password="${{inputs.remote-password}}"
