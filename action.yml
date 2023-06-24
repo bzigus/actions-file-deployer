@@ -286,7 +286,7 @@ runs:
         Committer: ${{github.actor}}
         Message: ${{github.event.head_commit.message}}" && show_hr
 
-        echo "${{github.sha}}" > .deploy-revision && echo "File created: .deploy-revision" && cat .deploy-revision && show_hr
+       # echo "${{github.sha}}" > .deploy-revision && echo "File created: .deploy-revision" && cat .deploy-revision && show_hr
 
         if [ "${input_sync}" == "delta" ]; then
           touch ~/files_to_upload ~/files_to_delete
